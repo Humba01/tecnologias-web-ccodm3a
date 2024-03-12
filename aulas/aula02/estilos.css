@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+
+    background-color: blue;
+    color: white;
+}
+
+main {
+    flex: 6;
+}
+
+footer {
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    min-width: 400px;
+}
+
+ul { 
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
