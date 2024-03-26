@@ -70,6 +70,7 @@ function TabelaDeContatos(tdCol1=[""], tdCol2=[""]) {
     const trLinha = document.createElement('tr');
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
+    table.append(trLinha);
 
 }
 
