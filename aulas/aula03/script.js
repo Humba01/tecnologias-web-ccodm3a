@@ -27,7 +27,7 @@ function Formulario() {
     inputSubmit.setAttribute('id', 'login');
     inputSubmit.setAttribute('type', 'submit');
     inputSubmit.setAttribute('value', 'Entrar');
-    inputSubmit.addEventListener('click', efetuarLogin());
+    inputSubmit.addEventListener('click', efetuarLogin);
     form.append(inputEmail);
     form.append(inputSenha);
     form.append(inputSubmit);
@@ -35,7 +35,23 @@ function Formulario() {
 }
 
 function efetuarLogin(event) {
-    console.log(event);
+    event.preventDefault();
+
+    const inputEmail = document.querySelector('input[type="email"]');
+    if(!inputEmail.value) {
+        const erro = document.createElement('p');
+        erro.innerHTML = 'Email é obrigatório';
+        inputEmail.parentElement.append(erro);
+        inputEmail.focus();
+    }
+
+    const inputSenha = document.querySelector('input[type="password"]');
+
+    // Chamada a API REST
+    fetch('http://localhost/users/login', {
+        method: 'POST',
+        body: {email: inputEmail.value, senha: inputSenha.value}
+    });
 }
 
 function Principal() {
@@ -46,4 +62,3 @@ function Principal() {
 
 elemento.append(Cabecalho());
 elemento.append(Principal());
-
