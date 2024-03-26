@@ -39,12 +39,14 @@ function SelecionaPaginaAtiva() {
         navNovo.classList.add('ativo');
         navContatos.classList.remove('ativo');
         raiz.innerHTML = '';
+        raiz.append(Titulo('Novo Contato'));
     });
     
     navContatos.addEventListener('click', function() {
         navContatos.classList.add('ativo');
         navNovo.classList.remove('ativo');
         raiz.innerHTML = '';
+        raiz.append(Titulo('Meus Contatos'));
     });
 
 }
