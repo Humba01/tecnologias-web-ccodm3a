@@ -27,7 +27,11 @@ const raiz = document.getElementById('root');
 function SelecionaPaginaAtiva() { 
     
     navInicio.addEventListener('click', function() {
-        raiz.removeChild(Titulo);
+        if(document.querySelector("h2")) {
+            document.querySelector("h2").remove();
+        }
+        navNovo.classList.remove('ativo');
+        navContatos.classList.remove('ativo');
         raiz.innerHTML = '';
     });
     
